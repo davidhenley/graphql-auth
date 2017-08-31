@@ -1,0 +1,19 @@
+{
+  "name": "graphql-auth",
+  "version": "1.0.0",
+  "description": "Using GraphQL, Passport, and MongoDB for Authentication",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidhenley/graphql-auth.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidhenley/graphql-auth/issues"
+  },
+  "homepage": "https://github.com/davidhenley/graphql-auth#readme"
+}
