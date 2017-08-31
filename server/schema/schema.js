@@ -5,7 +5,7 @@ const {
 } = graphql;
 
 const query = new GraphQLObjectType({
-  name: 'RootQuery'
+  name: 'RootQueryType'
 });
 
 module.exports = new GraphQLSchema({

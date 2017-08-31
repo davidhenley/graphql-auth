@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 
 // Mongoose
+const models = require('./models');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
@@ -17,7 +18,7 @@ const webpackConfig = require('../webpack.config.js');
 
 // GraphQL
 const expressGraphQL = require('express-graphql');
-const schema = require('./schema/schema');
+// const schema = require('./schema/schema');
 
 // Keys
 const keys = require('./config/keys');
@@ -30,7 +31,7 @@ mongoose.connection
   .once('open', () => console.log('Connected to MongoLab instance'))
   .on('error', (e) => console.log('Error connecting to MongoLab', e));
 
-// Express Session
+// Express Session with Cookies
 app.use(session({
   resave: true,
   saveUninitialized: true,
@@ -45,9 +46,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/graphql', expressGraphQL({
-  graphiql: true
-}))
+// app.use('/graphql', expressGraphQL({
+//   schema,
+//   graphiql: true
+// }));
 
 // Static Site
 app.use(webpackMiddleware(webpack(webpackConfig)));
