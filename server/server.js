@@ -19,7 +19,7 @@ const webpackConfig = require('../webpack.config.js');
 
 // GraphQL
 const expressGraphQL = require('express-graphql');
-// const schema = require('./schema/schema');
+const schema = require('./schema/schema');
 
 // Keys
 const keys = require('./config/keys');
@@ -47,10 +47,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// app.use('/graphql', expressGraphQL({
-//   schema,
-//   graphiql: true
-// }));
+app.use('/graphql', expressGraphQL({
+  schema,
+  graphiql: true
+}));
 
 // Static Site
 app.use(webpackMiddleware(webpack(webpackConfig)));
