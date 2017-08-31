@@ -10,6 +10,7 @@ mongoose.Promise = global.Promise;
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
+const passportConfig = require('./services/passport');
 
 // Webpack
 const webpackMiddleware = require('webpack-dev-middleware');
