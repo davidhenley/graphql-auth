@@ -6,7 +6,9 @@ mongoose.Promise = global.Promise;
 
 const keys = require('./config/keys');
 
-mongoose.connect(keys.MONGO_URI);
+mongoose.connect(keys.MONGO_URI, {
+  useMongoClient: true
+});
 
 mongoose.connection
   .once('open', () => console.log('Connected to MongoLab instance'))
