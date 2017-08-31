@@ -4,7 +4,7 @@
   "description": "Using GraphQL, Passport, and MongoDB for Authentication",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/davidhenley/graphql-auth/issues"
   },
-  "homepage": "https://github.com/davidhenley/graphql-auth#readme"
+  "homepage": "https://github.com/davidhenley/graphql-auth#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
 }
