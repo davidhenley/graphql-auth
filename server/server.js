@@ -8,6 +8,10 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
 
+const webpackMiddleware = require('webpack-dev-middleware');
+const webpack = require('webpack');
+const webpackConfig = require('../webpack.config.js');
+
 const keys = require('./config/keys');
 
 // Mongoose Connection
@@ -32,8 +36,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/', (req, res) => {
-  res.send('Hi there');
-});
+app.use(webpackMiddleware(webpack(webpackConfig)));
 
 module.exports = app;
